@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Works24 Brand Colors */
+  --color-brand-navy: #061B3A;
+  --color-brand-navy-dark: #041126;
+  --color-brand-navy-light: #0E2B56;
+  --color-brand-gold: #C59B43;
+  --color-brand-gold-light: #DFBD69;
+  --color-brand-gold-dark: #9E7625;
+
+  /* Typography */
+  --font-heading: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+    scroll-behavior: smooth;
+    background: linear-gradient(135deg, #C9CEE6 0%, #DCE3F3 50%, #C3D5EC 100%) !important;
+    color: #061B3A;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  ::selection {
+    background-color: rgba(197, 155, 67, 0.24);
+    color: #061B3A;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Inner White Architectural Stage with Soft Pastel Aura */
+.works24-stage {
+  background-color: #FFFFFF;
+  background-image:
+    radial-gradient(circle at 12% 14%, rgba(235, 226, 255, 0.85) 0%, transparent 45%),
+    radial-gradient(circle at 88% 18%, rgba(217, 234, 255, 0.85) 0%, transparent 44%),
+    radial-gradient(circle at 82% 86%, rgba(254, 243, 205, 0.65) 0%, transparent 42%),
+    radial-gradient(circle at 16% 84%, rgba(226, 236, 248, 0.75) 0%, transparent 46%);
+}
+
+/* Metallic Gold Text Highlight */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C59B43 0%, #9E7625 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
